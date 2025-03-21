@@ -1,3 +1,5 @@
+# Copyright (c) 2025 Rob Moore <io@rmoore.dev>
+
 import sys
 from datetime import datetime
 

@@ -1,3 +1,5 @@
+# Copyright (c) 2025 Rob Moore <io@rmoore.dev>
+
 from db import get_websites, store_form_result
 from crawler import crawl
 from configparser import ConfigParser

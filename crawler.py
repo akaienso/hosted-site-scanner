@@ -1,3 +1,5 @@
+# Copyright (c) 2025 Rob Moore <io@rmoore.dev>
+
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse, urljoin
 import requests, time
