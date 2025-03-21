@@ -1,0 +1,32 @@
+name: Validate License Headers
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  validate_license:
+    name: Check for License Headers
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Validate license headers
+        run: |
+          missing=$(grep -L "Copyright (c) $(date +%Y) Rob Moore" $(git ls-files '*.py'))
+          if [ -n "$missing" ]; then
+            echo "❌ Missing license headers in the following files:"
+            echo "$missing"
+            exit 1
+          else
+            echo "✅ All Python files have valid license headers."
+          fi
