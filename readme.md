@@ -39,13 +39,17 @@ pip install -r requirements.txt
 
 ### Configuration
 
-Create a `.env` file in the root of the project with the following contents:
+### Configuration
 
-```env
+This project reads its database credentials from environment variables. For local development, you can store them in a `.env` file in the project root (ignored by Git).
+
+Example `.env` file:
+
+```bash
 DB_HOST=localhost
-DB_USER=your_db_user
+DB_USER=your_username
 DB_PASSWORD=your_secure_password
-DB_NAME=your_db_name
+DB_NAME=hosted_site_scanner
 
 MAX_PAGES=30
 TIMEOUT=10
